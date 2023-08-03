@@ -1,13 +1,14 @@
-﻿using App.Blog.Domain;
-using App.Blog.Infra.Repository;
+﻿using App.Blog.Application.Interfaces;
+using App.Blog.Domain.Entities;
+using App.Blog.Infra.Interfaces;
 
 namespace App.Blog.Application.Services
 {
-    public class NoticiaService
+    public class NoticiaService : INoticiaService
     {
-        private readonly NoticiaRepository _repository;
+        private readonly INoticiaRepository _repository;
 
-        public NoticiaService(NoticiaRepository repository)
+        public NoticiaService(INoticiaRepository repository)
         {
             _repository = repository;
         }

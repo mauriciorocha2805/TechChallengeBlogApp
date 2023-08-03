@@ -3,7 +3,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace App.Blog.Domain
+namespace App.Blog.Domain.Entities
 {
     [Table("Noticia", Schema = "dbo")]
     public class Noticia

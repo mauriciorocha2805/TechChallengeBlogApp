@@ -1,4 +1,4 @@
-﻿using App.Blog.Domain;
+﻿using App.Blog.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace App.Blog.Infra.Context
@@ -11,5 +11,6 @@ namespace App.Blog.Infra.Context
         }
 
         public virtual DbSet<Noticia> Noticias { get; set; }
+        public virtual DbSet<Sistema> Sistemas { get; set; }
     }
 }
