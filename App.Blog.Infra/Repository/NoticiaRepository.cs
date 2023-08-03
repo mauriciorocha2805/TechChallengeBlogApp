@@ -1,12 +1,13 @@
-﻿using App.Blog.Domain;
+﻿using App.Blog.Domain.Entities;
 using App.Blog.Infra.Context;
+using App.Blog.Infra.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 #nullable disable
 
 namespace App.Blog.Infra.Repository
 {
-    public class NoticiaRepository
+    public class NoticiaRepository : INoticiaRepository
     {
         private readonly NoticiaDBContext _context;
 

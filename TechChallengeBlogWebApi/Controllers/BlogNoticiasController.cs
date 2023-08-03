@@ -1,5 +1,5 @@
 ﻿using App.Blog.Application.Services;
-using App.Blog.Domain;
+using App.Blog.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
@@ -63,7 +63,7 @@ namespace TechChallengeBlogWebApi.Controllers
 
         [HttpPut]
         [Route("")]
-        [SwaggerOperation(Summary = "Endpoint para incluir notícias na base de dados.", Description = "Endpoint para incluir notícias na base de dados.")]
+        [SwaggerOperation(Summary = "Endpoint para atualizar notícias na base de dados.", Description = "Endpoint para incluir notícias na base de dados.")]
         [SwaggerResponse(200, "OK")]
         [SwaggerResponse(204)]
         [SwaggerResponse(400)]
