@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Options;
+using System.Text;
 using System.Text.Json;
 using TechChallengeBlogWebApp.Models;
 using TechChallengeBlogWebApp.Util;
@@ -61,6 +62,63 @@ namespace TechChallengeBlogWebApp.Services
                 default:
                     return new();
             }
+        }
+
+        public async Task<NoticiaModel> PesquisarNoticiaPorIdAsync(int id)
+        {
+            await AutenticarJwtAsync();
+
+            HttpResponseMessage resposta = await _httpClient.GetAsync($"{ApiBlogConfig.PesquisarNoticiaPorId}/{id}");
+
+            switch (resposta.StatusCode)
+            {
+                case System.Net.HttpStatusCode.OK:
+                    string json = await resposta.Content.ReadAsStringAsync();
+                    return JsonSerializer.Deserialize<NoticiaModel>(json, new JsonSerializerOptions
+                    {
+                        PropertyNameCaseInsensitive = true
+                    });
+                default:
+                    return new();
+            }
+        }
+
+        public async Task IncluirAsync(NoticiaModel model)
+        {
+            await AutenticarJwtAsync();
+
+            string uri = $"{ApiBlogConfig.Incluir}";
+
+            string json = JsonSerializer.Serialize(model, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            });
+
+            StringContent content = new(json, Encoding.UTF8, "application/json");
+
+            _ = await _httpClient.SendAsync(new HttpRequestMessage(HttpMethod.Post, uri)
+            {
+                Content = content
+            });
+        }
+
+        public async Task AtualizarAsync(NoticiaModel model)
+        {
+            await AutenticarJwtAsync();
+
+            string uri = $"{ApiBlogConfig.Atualizar}";
+
+            string json = JsonSerializer.Serialize(model, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            });
+
+            StringContent content = new(json, Encoding.UTF8, "application/json");
+
+            _ = await _httpClient.SendAsync(new HttpRequestMessage(HttpMethod.Put, uri)
+            {
+                Content = content
+            });
         }
     }
 }

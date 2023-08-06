@@ -1,19 +1,28 @@
-﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using TechChallengeBlogWebApp.Models;
+using TechChallengeBlogWebApp.Services;
+
+#nullable disable
 
 namespace TechChallengeBlogWebApp.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
+        private readonly BlogService _service;
 
-        public IndexModel(ILogger<IndexModel> logger)
+        public IndexModel(BlogService service)
         {
-            _logger = logger;
+            _service = service;
         }
 
-        public void OnGet()
-        {
+        public List<NoticiaModel> Noticias { get; set; }
 
+        public async Task<IActionResult> OnGet()
+        {
+            Noticias = await _service.PesquisarTodasNoticiasAsync();
+
+            return Page();
         }
     }
 }

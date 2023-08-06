@@ -3,7 +3,7 @@ using TechChallengeBlogWebApp.Util;
 
 #nullable disable
 
-var builder = WebApplication.CreateBuilder(args);
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 ConfigurationManager configuration = builder.Configuration;
 
@@ -17,7 +17,7 @@ builder.Services.AddHttpClient<BlogService>(client =>
 
 builder.Services.Configure<ApiBlogConfig>(configuration.GetSection("ApiBlogConfig"));
 
-var app = builder.Build();
+WebApplication app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

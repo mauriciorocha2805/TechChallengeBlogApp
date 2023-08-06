@@ -1,0 +1,51 @@
+﻿@page
+@model TechChallengeBlogWebApp.Pages.EditarModel
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<h1>Editar</h1>
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @Html.HiddenFor(m => m.Noticia.Id)
+            <div class="form-group">
+                <label asp-for="Noticia.Titulo" class="control-label"></label>
+                <input asp-for="Noticia.Titulo" class="form-control" />
+                <span asp-validation-for="Noticia.Titulo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Noticia.DataPublicacao" class="control-label"></label>
+                <input asp-for="Noticia.DataPublicacao" class="form-control" />
+                <span asp-validation-for="Noticia.DataPublicacao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Noticia.Conteudo" class="control-label"></label>
+                <input asp-for="Noticia.Conteudo" class="form-control" />
+                <span asp-validation-for="Noticia.Conteudo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Noticia.Autor" class="control-label"></label>
+                <input asp-for="Noticia.Autor" class="form-control" />
+                <span asp-validation-for="Noticia.Autor" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<br />
+
+<div>
+    <a asp-page="Index">Voltar</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
