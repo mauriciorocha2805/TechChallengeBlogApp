@@ -40,7 +40,8 @@ namespace TechChallengeBlogWebApi.Services
                 {
                     Audience = _configuration["Jwt:ValidAudience"],
                     Issuer = _configuration["Jwt:ValidIssuer"],
-                    Expires = DateTime.UtcNow.AddSeconds(30),
+                    IssuedAt = DateTime.UtcNow,
+                    Expires = DateTime.UtcNow.AddMinutes(5),
                     SigningCredentials = signingCredentials,
                     Subject = new ClaimsIdentity(new Claim[] { new Claim(ClaimTypes.Name, "System.Fiap.Api") })
                 };

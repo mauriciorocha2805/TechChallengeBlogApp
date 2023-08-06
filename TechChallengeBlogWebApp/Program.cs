@@ -1,7 +1,21 @@
+using TechChallengeBlogWebApp.Services;
+using TechChallengeBlogWebApp.Util;
+
+#nullable disable
+
 var builder = WebApplication.CreateBuilder(args);
+
+ConfigurationManager configuration = builder.Configuration;
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+builder.Services.AddHttpClient<BlogService>(client =>
+{
+    client.BaseAddress = new Uri(builder.Configuration["BaseUrl"]);
+});
+
+builder.Services.Configure<ApiBlogConfig>(configuration.GetSection("ApiBlogConfig"));
 
 var app = builder.Build();
 
