@@ -1,17 +1,19 @@
-﻿using App.Blog.Application.Services;
+﻿using App.Blog.Application.Interfaces;
 using App.Blog.Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
 namespace TechChallengeBlogWebApi.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class BlogNoticiasController : ControllerBase
     {
-        private readonly NoticiaService _service;
+        private readonly INoticiaService _service;
 
-        public BlogNoticiasController(NoticiaService service)
+        public BlogNoticiasController(INoticiaService service)
         {
             _service = service;
         }

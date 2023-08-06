@@ -5,17 +5,19 @@ using App.Blog.Application.Services;
 using App.Blog.Infra.Context;
 using App.Blog.Infra.Interfaces;
 using App.Blog.Infra.Repository;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using TechChallengeBlogWebApi.Factory;
 using TechChallengeBlogWebApi.Interfaces;
+using TechChallengeBlogWebApi.Services;
+using TechChallengeBlogWebApi.Util;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 ConfigurationManager configuration = builder.Configuration;
 
 // Add services to the container.
-
 builder.Services.AddControllers();
 
 builder.Services.AddDbContext<NoticiaDBContext>(o => o.UseSqlServer(configuration.GetConnectionString("AzureBdContext")), ServiceLifetime.Scoped, ServiceLifetime.Scoped);
@@ -25,6 +27,7 @@ builder.Services.AddScoped(typeof(NoticiaDBContext));
 builder.Services.AddScoped<INoticiaRepository, NoticiaRepository>();
 builder.Services.AddScoped<ISistemaRepository, SistemaRepository>();
 
+builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<INoticiaService, NoticiaService>();
 builder.Services.AddScoped<ISistemaService, SistemaService>();
 
@@ -82,6 +85,13 @@ builder.Services.AddSwaggerGen(options =>
         }
     });
 });
+
+builder.Services
+    .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.ConfigureRsaSecurityKeyFactory(configuration);
+    });
 
 WebApplication app = builder.Build();
 
