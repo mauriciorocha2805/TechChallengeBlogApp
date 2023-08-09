@@ -1,7 +1,5 @@
-FROM mcr.microsoft.com/dotnet/aspnet:7.0
-WORKDIR /usr/src/app
-COPY package*.json ./
-RUN npm install
+FROM mcr.microsoft.com/dotnet/aspnet:6.0
+WORKDIR /app
 COPY . .
-EXPOSE 8080
-CMD ["dotnet", "TechChallengeBlogWebApi.dll"]
+EXPOSE 80
+ENTRYPOINT ["dotnet", "TechChallengeBlogWebApi.dll"]
