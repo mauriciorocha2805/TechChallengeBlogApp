@@ -28,7 +28,7 @@
     }
   },
   "variables": {
-    "containerInstanceName": "[concat('BlogWebApi')]",
+    "containerInstanceName": "[concat('blogwebapi')]",
     "location": "[resourceGroup().location]",
     "deploymentId": "[uniqueString(resourceGroup().id)]",
     "instanceApiVersion": "2018-10-01"
