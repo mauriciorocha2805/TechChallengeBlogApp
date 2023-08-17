@@ -3,7 +3,13 @@ using TechChallengeBlogWebApp.Util;
 
 #nullable disable
 
-WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+//WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+
+WebApplicationBuilder builder = WebApplication.CreateBuilder(new WebApplicationOptions
+{
+    EnvironmentName = Environments.Development
+});
+
 
 ConfigurationManager configuration = builder.Configuration;
 
@@ -27,7 +33,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
