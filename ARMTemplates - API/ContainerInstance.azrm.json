@@ -80,7 +80,7 @@
             }
           ],
           "type": "Public",
-          "dnsNameLabel": "PosTechFiap"
+          "dnsNameLabel": "PosTechFiapi"
         },
         "osType": "Linux"
       }
