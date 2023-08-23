@@ -67,9 +67,9 @@
         ],
         "imageRegistryCredentials": [
           {
-            "server": "[parameters('registryServerName')]",
-            "username": "[parameters('registryUserName')]",
-            "password": "[parameters('registryPassword')]"
+            "server": "techchallengeblogwebapi20230815221805.azurecr.io",
+            "username": "TechChallengeBlogWebApi20230815221805",
+            "password": "XAtvgc8HWwLn03SKFpi2QwmFKN3fBVc+e3dpUJ6DR3+ACRBNB5dX"
           }
         ],
         "ipAddress": {
