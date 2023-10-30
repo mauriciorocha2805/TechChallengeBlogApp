@@ -21,6 +21,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.Blog.Infra", "App.Blog.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.Blog.Application", "App.Blog.Application\App.Blog.Application.csproj", "{40D31460-E7F5-4C60-BD1D-9B06E262590B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Tests", "5 - Tests", "{3A8D23C0-7642-45CB-BD73-87F2F46349F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationTests", "IntegrationTests\IntegrationTests.csproj", "{3A40E534-9BBC-4F1A-9741-2D7795E49F38}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +51,10 @@ Global
 		{40D31460-E7F5-4C60-BD1D-9B06E262590B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{40D31460-E7F5-4C60-BD1D-9B06E262590B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{40D31460-E7F5-4C60-BD1D-9B06E262590B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A40E534-9BBC-4F1A-9741-2D7795E49F38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A40E534-9BBC-4F1A-9741-2D7795E49F38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A40E534-9BBC-4F1A-9741-2D7795E49F38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A40E534-9BBC-4F1A-9741-2D7795E49F38}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -57,6 +65,7 @@ Global
 		{1455F7A4-CF8F-4103-94ED-7DD5388707AE} = {657D2281-64CE-44D6-9FFF-737E38D144EA}
 		{E4B6F0E7-39FA-4A59-A117-CBB0019DCF9A} = {46A5FC56-47FC-4D5A-9E73-5BE06990E8CD}
 		{40D31460-E7F5-4C60-BD1D-9B06E262590B} = {E42D182C-2312-46AA-8BB9-9F6C60626B92}
+		{3A40E534-9BBC-4F1A-9741-2D7795E49F38} = {3A8D23C0-7642-45CB-BD73-87F2F46349F5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3EEC4999-0099-41A5-B1F0-0EEC4B3F82CF}
