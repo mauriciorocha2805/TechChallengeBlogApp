@@ -14,7 +14,7 @@ using Xunit.Abstractions;
 
 namespace IntegrationTests
 {
-    public class NoticiaRepositoryTest : IClassFixture<WebApplicationFactory<INoticiaRepository>>
+    public class NoticiaRepositoryTest 
     {
         private readonly INoticiaRepository _repository;
 
@@ -31,7 +31,7 @@ namespace IntegrationTests
         [Fact]
         public void TestaObterTodasNoticiasRepositorio()
         {
-            //Arrange         
+            //Arrange
             //Act
             Task<List<Noticia>> lista = _repository.ConsultarAsync();
 
