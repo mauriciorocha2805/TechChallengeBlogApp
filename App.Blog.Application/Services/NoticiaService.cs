@@ -32,5 +32,16 @@ namespace App.Blog.Application.Services
         {
             return await _repository.AtualizarAsync(noticia);
         }
+
+        public bool Adicionar(Noticia noticia)
+        {
+            return _repository.Adicionar(noticia);
+        }
+
+        public bool Excluir(int id)
+        {
+            return _repository.Excluir(id);
+        }
+
     }
 }

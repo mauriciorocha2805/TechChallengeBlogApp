@@ -37,5 +37,41 @@ namespace App.Blog.Infra.Repository
             _context.Update(noticia);
             return await _context.SaveChangesAsync();
         }
+
+        public bool Adicionar(Noticia noticia)
+        {
+            try
+            {
+                _context.Noticias.Add(noticia);
+                _context.SaveChanges();
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool Excluir(int Id)
+        {
+            var noticia = _context.Noticias.FirstOrDefault(c => c.Id.Equals(Id));
+
+            try
+            {
+                if (Id != noticia.Id)
+                {
+                    return false;
+                }
+                _context.Entry(noticia).State = EntityState.Modified;
+                _context.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
     }
 }
