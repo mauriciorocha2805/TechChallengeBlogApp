@@ -54,7 +54,7 @@ namespace IntegrationTests
         public async Task Testa_Editar_Noticia()
         {
             //arrange
-            var response = await _textFixture.Client.GetAsync("/Editar?id=8");
+            var response = await _textFixture.Client.GetAsync("/Editar?id=5");
             response.EnsureSuccessStatusCode();
             var html = await response.Content.ReadAsStringAsync();
             string token = _textFixture.ObterAntiForgeryToken(html);
@@ -69,7 +69,7 @@ namespace IntegrationTests
                 {_textFixture.AntiForgeryFieldName, token}
             };
 
-            var postRequest = new HttpRequestMessage(HttpMethod.Post, "/Editar?id=8")
+            var postRequest = new HttpRequestMessage(HttpMethod.Post, "/Editar?id=5")
             {
                 Content = new FormUrlEncodedContent(formData)
             };

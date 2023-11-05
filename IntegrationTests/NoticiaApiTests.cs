@@ -42,7 +42,7 @@ namespace IntegrationTests
             //arrange
             var noticia = new Noticia
             {
-                Id = 8,
+                Id = 5,
                 Titulo = "Notícia de Integração API - Alterada",
                 Conteudo = "Conteúdo da Notícia de Integração API",
                 Autor = "Usuário Integração API",
@@ -68,7 +68,7 @@ namespace IntegrationTests
         public async Task Testa_Obter_Noticia()
         {
             //act
-            var postResponse = await _textFixture.Client.GetAsync("/api/BlogNoticias/8");
+            var postResponse = await _textFixture.Client.GetAsync("/api/BlogNoticias/5");
             postResponse.EnsureSuccessStatusCode();
         }
     }
