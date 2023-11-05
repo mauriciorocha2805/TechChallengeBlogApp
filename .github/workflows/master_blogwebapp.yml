@@ -5,7 +5,7 @@ name: Build and deploy ASP.Net Core app to Azure Web App - BlogWebApp
 
 on:
    workflow_run:
-     workflows: ["master_blogwebapi"]
+     workflows: [Build and deploy ASP.Net Core app to Azure Web App - BlogWebApi]
      types: 
        - completed 
    workflow_dispatch:
