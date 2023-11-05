@@ -25,7 +25,7 @@ namespace TechChallengeBlogWebApp
 
             services.AddHttpClient<BlogService>(client =>
             {
-                client.BaseAddress = new Uri(Configuration["BaseUrl"]);
+                client.BaseAddress = new Uri(Configuration["BaseUrl"] ?? string.Empty);
             });
 
             services.Configure<ApiBlogConfig>(Configuration.GetSection("ApiBlogConfig"));
