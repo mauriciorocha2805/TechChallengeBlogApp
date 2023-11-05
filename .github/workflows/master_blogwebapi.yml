@@ -5,7 +5,7 @@ name: Build and deploy ASP.Net Core app to Azure Web App - BlogWebApi
 
 on:
    workflow_run:
-     workflows: [tests]
+     workflows: [UnitTests and IntegrationTests]
      types: 
        - completed 
    workflow_dispatch:
