@@ -14,6 +14,9 @@ public class SistemaService : ISistemaService
 
     public bool VerificarChaveExiste(string chave)
     {
+        if (string.IsNullOrEmpty(chave))
+            throw new Exception("Chave precisa ser informada");
+
         return _repository.VerificarChaveExiste(chave);
     }
 }
