@@ -21,22 +21,22 @@ public class NoticiaServiceTests
     [Fact]
     public async Task ConsultarPorId_PassandoIdNoticiaVazia()
     {
-        var exception = Assert.ThrowsAsync<Exception>(() => _noticiaService.ConsultarPorIdAsync(0));
-        Assert.Equal("Id precisa ser informado", exception.GetAwaiter().GetResult().Message);
+        var exception = await Assert.ThrowsAsync<Exception>(() => _noticiaService.ConsultarPorIdAsync(0));
+        Assert.Equal("Id precisa ser informado", exception.Message);
     }
 
     [Fact]
     public async Task Incluir_PassandoNoticiaJaExistente()
     {
-        var exception = Assert.ThrowsAsync<Exception>(() => _noticiaService.IncluirAsync(new Noticia { Id = 1}));
-        Assert.Equal("Id precisa ser igual a 0", exception.GetAwaiter().GetResult().Message);
+        var exception = await Assert.ThrowsAsync<Exception>(() => _noticiaService.IncluirAsync(new Noticia { Id = 1}));
+        Assert.Equal("Id precisa ser igual a 0", exception.Message);
     }
 
     [Fact]
     public async Task Atualizar_PassandoIdNoticiaVazia()
     {
-        var exception = Assert.ThrowsAsync<Exception>(() => _noticiaService.AtualizarAsync(new Noticia { Id = 0}));
-        Assert.Equal("Id precisa ser informado", exception.GetAwaiter().GetResult().Message);
+        var exception = await Assert.ThrowsAsync<Exception>(() => _noticiaService.AtualizarAsync(new Noticia { Id = 0}));
+        Assert.Equal("Id precisa ser informado", exception.Message);
     }
 }
 
