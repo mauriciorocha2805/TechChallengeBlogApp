@@ -62,6 +62,7 @@ namespace IntegrationTests
             const string tituloNoticia = "Noticia de Integracao Alterada";
             var formData = new Dictionary<string, string>
             {
+                {"Noticia.Id", "5" },
                 {"Noticia.Titulo",tituloNoticia },
                 {"Noticia.Conteudo","Conteúdo Alterado" },
                 {"Noticia.Autor","Usuário Integração" },
