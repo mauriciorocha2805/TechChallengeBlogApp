@@ -10,7 +10,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="appsettings.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="7.0.13" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.13" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.5.0" />
     <PackageReference Include="xunit" Version="2.4.2" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.5.3">
@@ -26,6 +39,8 @@
   <ItemGroup>
     <ProjectReference Include="..\App.Blog.Application\App.Blog.Application.csproj" />
     <ProjectReference Include="..\App.Blog.Infra\App.Blog.Infra.csproj" />
+    <ProjectReference Include="..\TechChallengeBlogWebApi\TechChallengeBlogWebApi.csproj" />
+    <ProjectReference Include="..\TechChallengeBlogWebApp\TechChallengeBlogWebApp.csproj" />
   </ItemGroup>
 
 </Project>

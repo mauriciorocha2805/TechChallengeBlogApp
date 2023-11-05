@@ -1,6 +1,9 @@
 ﻿using Microsoft.Extensions.Options;
+using System.Collections.Generic;
+using System.Net.Http;
 using System.Text;
 using System.Text.Json;
+using System.Threading.Tasks;
 using TechChallengeBlogWebApp.Models;
 using TechChallengeBlogWebApp.Util;
 

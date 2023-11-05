@@ -1,5 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using System;
+using System.Xml.Linq;
 using TechChallengeBlogWebApi.Factory;
 
 namespace TechChallengeBlogWebApi.Util
@@ -21,6 +24,7 @@ namespace TechChallengeBlogWebApi.Util
                 ValidAudience = configuration["Jwt:ValidAudience"],
                 IssuerSigningKey = rsaSecurityKeyFactory.Create()
             };
+            options.EventsType = typeof(JwtSecurityExtensionEvents);
         }
     }
 }

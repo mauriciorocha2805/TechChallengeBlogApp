@@ -1,4 +1,6 @@
-﻿namespace TechChallengeBlogWebApi.Interfaces
+﻿using System.Threading.Tasks;
+
+namespace TechChallengeBlogWebApi.Interfaces
 {
     public interface ITokenService
     {

@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
+using System;
+using System.Threading.Tasks;
 using TechChallengeBlogWebApi.Interfaces;
 using TechChallengeBlogWebApi.Models.Response;
 
